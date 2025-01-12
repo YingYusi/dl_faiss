@@ -1,0 +1,19 @@
+\section{summarize}
+
+In this experiment, our main objective was to distinguish between non-plagiarism, explicit plagiarism, and implicit plagiarism by calculating the similarity between texts. The entire experimental process can be divided into the following key steps:
+
+\begin{enumerate}
+    \item \textbf{Data Preparation}: We first collected and organized the relevant text data, which includes three types of texts: non-plagiarized, explicitly plagiarized, and implicitly plagiarized. We used GPT to assist in generating data, and in addition, we manually generated some of the data.
+    
+    \item \textbf{Text Vectorization}: In order to compute the similarity between texts, we used the \texttt{SentenceTransformer} model to convert the texts into vector embeddings. This step is crucial for the experiment because only by converting the text into numerical vectors can we perform the subsequent similarity calculations.
+    
+    \item \textbf{Similarity Calculation}: We used cosine similarity as the measure of text similarity. By calculating the cosine similarity between the query sentence and each sentence in the corpus, we were able to identify the most similar sentences and determine whether plagiarism exists. For each pair of sentences, we calculated their cosine similarity and selected the most similar sentence for further analysis.
+    
+    \item \textbf{Plagiarism Localization}: To identify the most likely plagiarized sections, we split the texts into independent sentences and compared each sentence from the plagiarized dataset with every sentence in the original dataset. This way, we could detect plagiarism even if the sentence order was changed, as long as the content of the text remained similar.
+    
+    \item \textbf{Threshold Setting and Judgment}: We set a fixed similarity threshold (0.5), and when the similarity exceeded this threshold, we considered the texts to be possibly plagiarized. However, this threshold choice may not be optimal, and in the future, it can be adjusted and optimized to improve the accuracy of the judgment.
+    
+    \item \textbf{Experiment Analysis and Conclusion}: Through the experiment, we identified several potential plagiarized texts. The system performed well in detecting explicit plagiarism, but there were certain limitations in detecting implicit plagiarism, especially when the sentence order was changed. The similarity calculation might not fully reveal plagiarism behavior in such cases.
+\end{enumerate}
+
+Overall, while this experiment achieved certain goals, there were limitations due to time and resource constraints, particularly in detecting implicit plagiarism and setting the similarity threshold. Future research can improve plagiarism detection accuracy and robustness by incorporating more semantic information, optimizing models, and adjusting thresholds.

@@ -1,0 +1,85 @@
+\section{Appendix}
+
+\subsection{Instruction}
+
+\subsubsection{innovation point}
+\begin{itemize}
+    \item Multiple self-collected datasets -- 40\% Innovation
+    \item Effective fine-tuning of existing models -- 30\% Innovation
+\end{itemize}
+
+\subsubsection{Source of Code}
+\
+
+Our code is partially based on this video~\cite{video}, which provided us with some ideas and a framework for implementation. However, we did not directly copy the code from the video; instead, we modified and optimized it according to our own requirements. The majority of the code was written by ourselves, especially in the plagiarism detection part, where we designed and implemented independent functional modules to ensure the customizability and flexibility of the entire experiment. During the development process, we not only borrowed some implementation methods from the video but also conducted extensive trials and testing to ensure the effectiveness and reliability of the code.
+
+\subsubsection{Innovation motivation and problem that needs to be solved}
+\
+
+Innovative motivation: Solving the problem of plagiarism localization that cannot be achieved by traditional text similarity retrieval methods.
+
+\subsubsection{Comparison of improvements with reference papers}
+\
+
+We used the FAISS library provided in the reference paper and did not make other innovations in text recognition. Our main contribution lies in text plagiarism localization detection, so the level of improvement compared to the reference paper cannot be measured.
+
+\subsection{The process of generating data}
+\subsubsection{Non-plagiarism}
+\textbf{Q:} Suppose you are an original author, and reading other people's words inspires you. Example:  \\
+\textbf{Original sentence}: She spent the afternoon reading a new chapter, eager to understand the concepts and apply them in practice.  \\
+\textbf{Generated sentence}: After attending the workshop, he felt more confident in using the new software to complete his assignments.  
+
+We can see that while both sentences describe something related to learning, we can tell that they are on the same topic rather than being plagiarized. This is because, despite both sentences involving the process of learning and understanding, they present different aspects of learning through different contexts, time points, and tasks, which is enough to confirm that these sentences are not plagiarized.
+
+To explain further, we can understand that within the same theme, authors can convey information in different ways, leading to many different expressions under the same theme. Each of these ways represents a new description of the theme. For instance, in the original sentence, ``reading a new chapter" focuses on the active process of acquiring knowledge, while the generated sentence's ``attending a workshop" emphasizes learning through interactive software, showcasing two different but complementary ways of learning.
+
+Now, based on this idea, expand it to multiple different themes, including learning, economics, environment, food, animals, politics, holidays, wellness, tourism, history, etc. Each theme should present sentences with different details, contexts, or actions, focusing on their specific aspects, ensuring sentences revolve around the same theme but differ in their expression, thus avoiding plagiarism.\\
+
+\\\\\\\\
+
+\textbf{Q}: Suppose you need to generate a series of sentences for a diverse theme library, covering various fields such as learning, economy, environment, animals, politics, tourism, science fiction, literature, mythology, traditional Chinese medicine, movies, artificial intelligence, etc. When generating sentences for these themes, please consider the following requirements:  \\
+1. Each sentence should be closely related to the theme and accurately reflect the core content or key viewpoints of that theme.  \\
+2. The sentences should be creative, expressing unique viewpoints or descriptions. Simple copying and pasting of existing ideas or texts is prohibited. Avoid excessive similarity between the original sentence and others, even within the same theme, ensuring the uniqueness of each sentence.  \\
+3. The format of the sentences can be diverse. They can express a viewpoint, analyze a phenomenon, describe a scene, raise a question, or predict a trend, etc.  \\
+4. Each sentence should focus on specific details, highlighting the theme's emphasis, and convey different ideas and meanings.  
+
+Please generate a corpus based on these requirements and ensure that each sentence is unique.\\
+
+\\
+\textbf{Q}: You need to generate sentences that contain explicit plagiarism based on the original sentence. Common methods for explicit plagiarism include replacing keywords, rearranging sentence structure, changing modifiers or parts of phrases, etc. This approach generally keeps the overall structure and core meaning of the sentence unchanged, only modifying certain parts to make it appear different from the original sentence. For example, by replacing keywords:
+
+\textbf{Original sentence}:  
+The sun sets in the west, painting the sky with hues of orange and red.  
+
+\textbf{Explicit plagiarism sentence}:  
+The sun descends in the west, coloring the sky with shades of orange and crimson.
+
+\subsubsection{Implicit plagiarism}
+\textbf{Q}: Implicit plagiarism refers to the use of someone else's ideas, viewpoints, structure, or expression without directly citing their work, resulting in content that is somewhat similar to the original.\\
+\textbf{For example}:  \\
+\textbf{Original}: "The cat sat on the mat. It looked very comfortable." \\
+\textbf{Plagiarized}: "On the mat, the cat sat. It appeared quite comfortable."
+
+\subsubsection{Explicit plagiarism}
+\textbf{Q}: Suppose you are an original author. By learning from other people's writings, you can gain more creative inspiration, but that does not constitute explicit plagiarism.\\
+\textbf{Example}:\\
+\textbf{Original sentence}: The cat sat on the mat. It looked very comfortable.\\
+\textbf{Plagiarized sentence}: The dog lay on the rug. It seemed very relaxed.
+
+It can be observed that these two sentences describe a similar scene—an animal in a resting state. However, the difference lies merely in the replacement of keywords (such as changing "cat" to "dog" and "mat" to "rug"), while the sentence structure and core information remain nearly identical. This kind of writing, where only a few words or phrases are replaced, constitutes explicit plagiarism. In other words, explicit plagiarism typically retains the original sentence's grammatical framework and core description, only disguising the "difference" by changing some nouns, verbs, or adjectives, without making substantial changes to the sentence's main idea, context, or information. For example, in the original sentence, "The cat sat on the mat" describes the scene of "the cat resting on a mat," while the plagiarized sentence simply replaces keywords, still describing "an animal resting on some object." This does not possess enough originality.
+
+Under different themes, explicit plagiarism will also follow a similar pattern: only surface-level vocabulary is modified, without presenting new contexts, details, or perspectives. This way of creation not only violates the principle of originality but also fails to reflect the author's deep understanding of the theme.\\
+
+Now, I need you to generate a dataset for implicit plagiarism. The dataset should contain both the original and plagiarized sentences, each containing more than 80 characters. 
+
+Output format:  
+"The children played outside until it got."  
+"Until it got dark, the children played outside."
+
+Please output in a code block format.
+\\\\
+\textbf{Q}: Based on the data you have generated, the following new requirements are proposed: \\ 
+1. Each sentence in the dataset should contain implicit plagiarism.  \\
+2. Expand the methods of implicit plagiarism in each group, so that each sentence may have different ways of plagiarism (e.g., word order adjustment, passive voice change, phrase rephrasing, etc.).  \\
+3. The dataset should cover a variety of scenarios, with sentences describing everyday activities, emotional expressions, and other diverse themes.  \\
+4. Generate as much data as possible and output it in a code block format.

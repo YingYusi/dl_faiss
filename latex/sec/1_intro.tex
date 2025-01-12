@@ -1,0 +1,29 @@
+\usepackage{enumitem}
+\section{Introduction}
+With the rapid development of large language models (LLMs) and retrieval tools in the field of natural language processing, their applications have gradually permeated the education and academic sectors, especially showing great potential in areas such as automated grading, personalized learning, and content generation. However, with the widespread application of these technologies, academic integrity issues have become increasingly complex and severe. Problems like assignment plagiarism, ghostwriting, and code plagiarism not only undermine the fairness of the academic environment but also present significant challenges for educational institutions in terms of management. Traditional plagiarism detection methods mainly rely on simple text matching or manual inspection, which, while effective in identifying explicit textual similarities, often fail to detect implicit plagiarism or modified plagiarized texts.
+
+Currently, the academic community has begun to explore more advanced plagiarism detection methods, including semantic matching techniques based on large language models and retrieval-augmented frameworks. These methods offer deeper text understanding and can provide support in more complex plagiarism scenarios. However, most existing studies focus on determining the overall similarity between texts, and there is still a lack of effective solutions for precisely pinpointing specific plagiarized sections of the text. Therefore, in this paper, we propose an improved approach based on adjusting the parameters of FAISS~\cite{FAISS} and SentenceTransformer, aiming to enhance the accuracy and efficiency of plagiarism detection, especially in terms of accurately identifying and locating plagiarized segments.
+
+FAISS (Facebook AI Similarity Search) is an efficient similarity search and clustering tool that can quickly process large-scale text data and identify content highly similar to the query text. In our research, we adjust the parameters of FAISS and SentenceTransformer to optimize the model's search and matching strategies, allowing us not only to detect whether Student A has plagiarized from Student B, but also to precisely highlight the specific plagiarized parts, such as direct quotes, rephrasing, or simply changing certain names.
+
+This improved approach, based on large-scale data and deep learning technology, can address the limitations of traditional plagiarism detection methods in terms of accuracy and efficiency, providing educational institutions with a more comprehensive and precise plagiarism detection tool. By combining automated model judgment with subsequent manual review, we can more efficiently address complex academic integrity issues and provide technical support to maintain fairness and integrity in the academic environment.
+
+There are some of our main contributions:
+
+\begin{enumerate}
+    \item \textbf{Classify plagiarized texts}:  
+    We successfully utilized FAISS to classify plagiarized texts into three categories:  
+    \begin{itemize}
+        \item \textbf{Non-plagiarized text}: Non-plagiarized text refers to cases where the similarity between Text A and Text B is relatively low, generally indicating no plagiarism.  
+        \item \textbf{Explicitly plagiarized text}: Explicitly plagiarized text refers to cases where the similarity between two texts is extremely high, such as when only proper nouns are changed or numbers are slightly adjusted.  
+        \item \textbf{Implicitly plagiarized text}: Implicitly plagiarized text refers to cases where the similarity between two texts is lower, but plagiarism may still exist. A simple example is plagiarism achieved by merely changing the order of sentences.  
+    \end{itemize}
+
+    \item \textbf{Proposed a visualization algorithm for plagiarized text}:  
+    We developed a simple yet effective method to highlight plagiarized content. Experiments have demonstrated that this algorithm performs well in practice.  
+
+    \item \textbf{Our model}:  
+    We built a simple demo that allows users to get a general idea of the model’s performance before using the complete version.
+\end{enumerate}
+
+
